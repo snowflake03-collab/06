@@ -1,33 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int a,b,n,x,y;
-int sumResult, SquareResult, maxResult;
 
-int sumTwo(int a, int b){
-    return (a + b);
-}
-
-int square(int n){
-    return (n*n);
-}
-
-int get_max(int x, int y){
-    if (x > y)
-         return x;
-    else
-         return y;
-}
-
-int main(void)
+//call by value
+void square(int a)
 {
-    
-  printf("hello world!\n");
+  a = a*a;     
+}
+
+int main()
+{
+  int a = 2;
+  square(a);
+  printf("a=%i\n", a);
   
-  printf("sum two result is %i\n", sumTwo(2,3));
-  printf("square result is %i\n", square(5));
-  printf("getmax result is %i\n", get_max(10,13));
- 
   system("PAUSE");	
   return 0;
 }
+
+
+//반환형 만들어서 return 
+int square(int a)
+{
+    return(a*a);
+}
+
+int main()
+{
+  int a = 2;
+  a = square(a);
+  printf("a=%i\n",a);
+    
+  system("PAUSE");	
+  return 0;
+}
+
