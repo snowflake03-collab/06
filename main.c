@@ -2,35 +2,43 @@
 #include <stdlib.h>
 
 
-//call by value
-void square(int a)
+int factorial(int n)
 {
-  a = a*a;     
-}
-
-int main()
-{
-  int a = 2;
-  square(a);
-  printf("a=%i\n", a);
-  
-  system("PAUSE");	
-  return 0;
-}
-
-
-//반환형 만들어서 return 
-int square(int a)
-{
-    return(a*a);
-}
-
-int main()
-{
-  int a = 2;
-  a = square(a);
-  printf("a=%i\n",a);
+  int res = 1, i;
+  for(i = 1; i <= n; i++)
+    res = res * i;
     
+    return res;
+}
+
+int combination(int n, int r){
+    
+    int up, down;
+    up = factorial(n);
+    down = factorial(n-r) * factorial(r);
+    return up/down;   
+}
+
+int main(void)
+{  
+   //variable declare
+  int n, r;
+  int res;
+ 
+ 
+  //input data
+  printf("input n and r for combination calculation:" );
+  scanf("%d" "%d", &n, &r); 
+  
+  //compute combination()
+  res = combination(n, r); 
+  
+  
+  //print result 
+  printf("the result is: %d\n", res);
+    
+  
+     
   system("PAUSE");	
   return 0;
 }
